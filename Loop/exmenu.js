@@ -11,6 +11,7 @@ function tabuada() {
 
     let num = parseInt(prompt("Digite um número:"))
 
+    console.log("Tabuada do número: " + num);
     for (mult = 1; mult <= 10; mult++) {
         console.log(mult * num);
     }
@@ -25,7 +26,7 @@ function Idade() {
         id = parseInt(prompt("Digite sua idade: "))
     }
 
-    console.log("Maior de idade");
+    console.log("Sua idade é: " + id);
 
 }
 
@@ -33,6 +34,7 @@ function Idade() {
 function Contagemregressiva() {
 
     let num = parseInt(prompt("Digite um número: "))
+    console.log("Contagem regressiva do número: " + num);
 
     while (num > 0) {
         num--
@@ -44,6 +46,8 @@ function Contagemregressiva() {
 
 function numimpares() {
 
+    console.log("Números ímpares de 0 a 50:");
+
     for (let num = 0; num <= 50; num++) {
         if (num % 2 != 0) {
             console.log(num);
@@ -51,26 +55,68 @@ function numimpares() {
     }
 }
 
+function numpares() {
 
-let opcao = (prompt("Escolha uma opção\n1 - Tabuada \n2 - Idade \n3 - Contagem Regressiva \n4 - Números Ímpares "))
+    console.log("Números pares de 0 a 10:");
 
-switch (opcao) {
-    case "1":
-        tabuada()
-        break;
+    for (let num = 1; num <= 10; num++) {
+        if (num % 2 == 0) {
+            console.log(num);
+        }
+    }
+}
 
-    case "2":
-        Idade()
-        break;
+function somadosnum() {
 
-    case "3":
-        Contagemregressiva()
-        break;
+    let a = 1
+    let b = 0
 
-    case "4":
-        numimpares()
-        break;
+    console.log("Soma dos números 1 ao 100");
 
-    default:
-        break;
+    while (a <= 100) {
+        a++
+        b += a
+        console.log(b);
+    }
+}
+
+
+
+let opcao;
+
+while (opcao != 0) {
+
+    
+    opcao = prompt("Escolha uma opção\n1 - Tabuada \n2 - Idade \n3 - Contagem Regressiva \n4 - Números Ímpares de 0 a 50\n5 - Números Pares 0 a 10\n6 - Soma dos números de 1 a 100 \n Digite 0 para sair ")
+    switch (opcao) {
+        case "1":
+            tabuada()
+            break;
+
+        case "2":
+            Idade()
+            break;
+
+        case "3":
+            Contagemregressiva()
+            break;
+
+        case "4":
+            numimpares()
+            break;
+
+        case "5":
+            numpares()
+            break;
+        case "6":
+            somadosnum()
+            break;
+
+        default:
+            break;
+    }
+}
+
+if (opcao == 0) {
+    console.log("Saiu!");
 }
